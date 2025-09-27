@@ -105,12 +105,12 @@ cd basselix
 python -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
 
-# 3. Install PyTorch
-# For CUDA 12.1:
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+# 3. Install requirements
+# Of you are using a GPU:
+pip install -r requirements-gpu.txt
 
 # CPU only:
-pip install torch torchvision torchaudio
+pip install -r requirements-cpu.txt
 
 # 4. Launch the app
 python -m app.gradio_app
@@ -132,7 +132,7 @@ docker-compose up -d --build basselix-cpu
 docker-compose up -d --build basselix-gpu
 ```
 
-Once the container is running, open http://localhost:7860 in your browser to use Basselix.
+Once the container is running, open http://localhost:7860 in your browser to use Basselix (You might have to wait a few seconds for the app to load).
 
 ---
 
