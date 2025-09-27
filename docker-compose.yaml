@@ -1,0 +1,19 @@
+services:
+  basselix-cpu:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.cpu
+    ports: ["7860:7860"]
+
+  basselix-gpu:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.cuda
+    ports: ["7860:7860"]
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]
