@@ -106,7 +106,7 @@ python -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
 
 # 3. Install requirements
-# Of you are using a GPU:
+# If you are using a GPU:
 pip install -r requirements-gpu.txt
 
 # CPU only:
